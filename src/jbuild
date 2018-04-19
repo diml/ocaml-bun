@@ -2,18 +2,6 @@
 
 (executable
  ((name bun)
-  (modules (bun files))
   (public_name bun)
   (libraries (bos cmdliner fpath rresult astring spawn)))
 )
-
-(executable
- ((name fuzzme)
-  (modules (fuzzme))
-  (libraries (crowbar))
- ))
-
-(alias
- ((name runtest)
-  (deps (bun.exe fuzzme.exe))
-  (action (run "timeout" "-k" "3s" ./${exe:bun.exe} "-vv" ${exe:fuzzme.exe}))))

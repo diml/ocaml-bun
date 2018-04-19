@@ -1,0 +1,12 @@
+(jbuild_version 1)
+
+(executable
+ ((name fuzzme)
+  (modules (fuzzme))
+  (libraries (crowbar))
+ ))
+
+(alias
+ ((name runtest)
+  (deps (../src/bun.exe fuzzme.exe))
+  (action (run "timeout" "-k" "2s" "2s" ../src/bun.exe "-vv" ./fuzzme.exe))))
