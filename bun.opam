@@ -14,6 +14,7 @@ depends: [
   "fpath"
   "rresult" {>= "0.3.0" }
   "astring"
+  "crowbar" {test}
   "spawn" {>= "0.10.1"}
   "afl" {= "2.52b"}
 ]
