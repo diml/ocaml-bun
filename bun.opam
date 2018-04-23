@@ -1,13 +1,12 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "maintenance@identity-function.com"
 authors: ["Mindy Preston"]
 homepage: "https://github.com/yomimono/ocaml-bun"
 bug-reports: "https://github.com/yomimono/ocaml-bun/issues"
-dev-repo: "https://github.com/yomimono/ocaml-bun.git"
+dev-repo: "git+https://github.com/yomimono/ocaml-bun.git"
 license: "MIT"
 build: [[ "jbuilder" "build" "-p" name "-j" jobs ]]
 build-test: [[ "jbuilder" "runtest" ]]
-available: [ ocaml-version >= "4.04" ]
 depends: [
   "jbuilder" {build}
   "bos" {>= "0.2.0" }
@@ -18,4 +17,5 @@ depends: [
   "crowbar" {test}
   "spawn" {>= "0.10.1"}
   "afl" {= "2.52b"}
+  "ocaml" {>= "4.04.0"}
 ]
